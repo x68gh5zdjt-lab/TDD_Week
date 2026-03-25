@@ -8,7 +8,7 @@ def add_item(inventory, item):
         raise ValueError
     inv["items"].append(item)
     return inv
- 
+
 def remove_item(inventory, item):
     inv = inventory()
     if item not in inv["items"]:
@@ -17,8 +17,7 @@ def remove_item(inventory, item):
         return inv
     inv["items"].remove(item)
     return inv
- 
- 
+
+
 def get_item_count(inventory):
-    inv = inventory()
-    return len(inv["items"])
+    pass
