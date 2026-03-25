@@ -1,5 +1,4 @@
 name: Score System CI
-
 on: push
 
 jobs:
@@ -13,12 +12,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-- name: Install dependencies
+
+      - name: Install dependencies
         run: pip install pytest pytest-cov flake8
 
-      - name: Run tests
-        run: pytest
-- name: Run tests with coverage
+      - name: Run tests with coverage
         run: pytest --cov=. --cov-fail-under=85
-- name: Run flake8 linting
+
+      - name: Run flake8 linting
         run: flake8 .
