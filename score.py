@@ -1,33 +1,32 @@
 def add_points(game, amount):
     if amount <= 0:
-        raise ValueError("amount must be positive")
-
-    if not game["active"]:
-        return game
-    
-    game["score"] += amount * game["multiplier"]
-    return game
+        raise ValueError
+    results = game()
+    if not results["active"]:
+        return results
+    results["score"] += amount * results["multiplier"]
+    return results
 
 
 def apply_multiplier(game, multiplier):
     if multiplier < 1:
-        raise ValueError("multiplier must be >= 1")
-
-    if not game["active"]:
-        return game
-
-    game["multiplier"] = multiplier
-    return game
+        raise ValueError
+    results = game()
+    if not results["active"]:
+        return results
+    results["multiplier"] = multiplier
+    return results
 
 
 def reset_score(game):
-    game["score"] = 0
-    game["multiplier"] = 1
-    return game
+    results = game()
+    results["score"] = 0
+    results["multiplier"] = 1
+    return results
 
 
 def is_high_score(game, threshold):
     if threshold < 0:
-        raise ValueError("threshold must be >= 0")
-
-    return game["score"] > threshold
+        raise ValueError
+    results = game()
+    return results["score"] > threshold
