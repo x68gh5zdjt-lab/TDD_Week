@@ -1,5 +1,3 @@
-import pytest 
-
 def take_damage(player, amount):
     player["health"] = max(0, player["health"] - amount)
     if player["health"] == 0:
