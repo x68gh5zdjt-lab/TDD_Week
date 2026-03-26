@@ -9,6 +9,7 @@ def add_item(inventory, item):
     inv["items"].append(item)
     return inv
 
+
 def remove_item(inventory, item):
     inv = inventory()
     if item not in inv["items"]:
